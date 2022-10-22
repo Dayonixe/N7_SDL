@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE DictionaryObjects SYSTEM "rtdsDictionaryObjects.dtd">
+
+<DictionaryObjects version="9159" language="none" diagramType="blk">
+<Signal id="SIG1" name="msgUser">
+</Signal>
+<Signal id="SIG2" name="dataUser">
+</Signal>
+<Signal id="SIG3" name="dataProto">
+</Signal>
+<Signal id="SIG4" name="msgProto">
+</Signal>
+<Item id="ITEM1" type="block" name="Duplicator" scope="current" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<UsingSymbols>
+<SymbolReference symbolId="SYMB1"/>
+</UsingSymbols>
+<SignalWindow id="SIGWDW4" insideDiagram="TRUE">
+<ConnectorReference linkId="LINK1" isFrom="TRUE"/>
+<Connections>
+<Connection name="DataChannelProto"/>
+</Connections>
+<SentSignals>
+<SignalReference id="SIG4"/>
+</SentSignals>
+<ReceivedSignals>
+<SignalReference id="SIG3"/>
+</ReceivedSignals>
+</SignalWindow>
+<SignalWindow id="SIGWDW3" insideDiagram="TRUE">
+<ConnectorReference linkId="LINK0" isFrom="TRUE"/>
+<Connections>
+<Connection name="DataChannelUser"/>
+</Connections>
+<SentSignals>
+<SignalReference id="SIG2"/>
+</SentSignals>
+<ReceivedSignals>
+<SignalReference id="SIG1"/>
+</ReceivedSignals>
+</SignalWindow>
+<Channel name="channelUser" fromSignalWindow="SIGWDW3" toSignalWindow="SIGWDW1"/>
+<Channel name="channelProto" fromSignalWindow="SIGWDW4" toSignalWindow="SIGWDW2"/>
+</Item>
+<Item id="ITEM2" type="process" name="P_Duplicator" parentId="ITEM1" scope="none" minInstances="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYMB2"/>
+</DefiningSymbols>
+<UsingSymbols>
+<SymbolReference symbolId="SYMB2"/>
+</UsingSymbols>
+<SignalWindow id="SIGWDW1" insideDiagram="FALSE">
+<ConnectorReference linkId="LINK0" isFrom="FALSE"/>
+<SentSignals>
+<SignalReference id="SIG1"/>
+</SentSignals>
+<ReceivedSignals>
+<SignalReference id="SIG2"/>
+</ReceivedSignals>
+</SignalWindow>
+<SignalWindow id="SIGWDW2" insideDiagram="FALSE">
+<ConnectorReference linkId="LINK1" isFrom="FALSE"/>
+<SentSignals>
+<SignalReference id="SIG3"/>
+</SentSignals>
+<ReceivedSignals>
+<SignalReference id="SIG4"/>
+</ReceivedSignals>
+</SignalWindow>
+</Item>
+</DictionaryObjects>

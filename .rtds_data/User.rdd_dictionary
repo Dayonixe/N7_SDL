@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE DictionaryObjects SYSTEM "rtdsDictionaryObjects.dtd">
+
+<DictionaryObjects version="9159" language="none" diagramType="blk">
+<Signal id="SIG1" name="dataUser">
+</Signal>
+<Signal id="SIG2" name="msgUser">
+</Signal>
+<Signal id="SIG3" name="String">
+</Signal>
+<Item id="ITEM1" type="block" name="User" scope="current" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<UsingSymbols>
+<SymbolReference symbolId="SYMB1"/>
+</UsingSymbols>
+<SignalWindow id="SIGWDW4" insideDiagram="TRUE">
+<ConnectorReference linkId="LINK1" isFrom="FALSE"/>
+<Connections>
+<Connection name="StringChannel"/>
+</Connections>
+<SentSignals>
+<SignalReference id="SIG3"/>
+</SentSignals>
+</SignalWindow>
+<SignalWindow id="SIGWDW3" insideDiagram="TRUE">
+<ConnectorReference linkId="LINK0" isFrom="TRUE"/>
+<Connections>
+<Connection name="DataChannelUser"/>
+</Connections>
+<SentSignals>
+<SignalReference id="SIG2"/>
+</SentSignals>
+<ReceivedSignals>
+<SignalReference id="SIG1"/>
+</ReceivedSignals>
+</SignalWindow>
+<Channel name="channelUser" fromSignalWindow="SIGWDW3" toSignalWindow="SIGWDW1"/>
+<Channel name="channel3" fromSignalWindow="SIGWDW2" toSignalWindow="SIGWDW4"/>
+</Item>
+<Item id="ITEM2" type="process" name="P_User" parentId="ITEM1" scope="none" minInstances="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYMB2"/>
+</DefiningSymbols>
+<UsingSymbols>
+<SymbolReference symbolId="SYMB2"/>
+</UsingSymbols>
+<SignalWindow id="SIGWDW1" insideDiagram="FALSE">
+<ConnectorReference linkId="LINK0" isFrom="FALSE"/>
+<SentSignals>
+<SignalReference id="SIG1"/>
+</SentSignals>
+<ReceivedSignals>
+<SignalReference id="SIG2"/>
+</ReceivedSignals>
+</SignalWindow>
+<SignalWindow id="SIGWDW2" insideDiagram="FALSE">
+<ConnectorReference linkId="LINK1" isFrom="TRUE"/>
+<ReceivedSignals>
+<SignalReference id="SIG3"/>
+</ReceivedSignals>
+</SignalWindow>
+</Item>
+</DictionaryObjects>

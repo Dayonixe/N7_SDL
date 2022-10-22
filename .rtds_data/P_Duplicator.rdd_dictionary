@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE DictionaryObjects SYSTEM "rtdsDictionaryObjects.dtd">
+
+<DictionaryObjects version="9159" language="sdl" diagramType="prcs">
+<Signal id="SIG1" name="dataUser">
+<UsingSymbols>
+<SymbolReference symbolId="SYM6" usingKind="input"/>
+</UsingSymbols>
+</Signal>
+<Signal id="SIG2" name="dataProto">
+<UsingSymbols>
+<SymbolReference symbolId="SYM17" usingKind="output"/>
+<SymbolReference symbolId="SYM18" usingKind="output"/>
+</UsingSymbols>
+</Signal>
+<Signal id="SIG3" name="msgProto">
+<UsingSymbols>
+<SymbolReference symbolId="SYM7" usingKind="input"/>
+</UsingSymbols>
+</Signal>
+<Signal id="SIG4" name="msgUser">
+<UsingSymbols>
+<SymbolReference symbolId="SYM20" usingKind="output"/>
+<SymbolReference symbolId="SYM21" usingKind="output"/>
+</UsingSymbols>
+</Signal>
+<Item id="ITEM1" type="process" name="P_Duplicator" scope="current" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Body>
+<SentSignals>
+<SignalReference id="SIG4"/>
+<SignalReference id="SIG2"/>
+</SentSignals>
+<ReceivedSignals>
+<SignalReference id="SIG3"/>
+<SignalReference id="SIG1"/>
+</ReceivedSignals>
+</Body>
+</Item>
+<Item id="ITEM10" type="variable" name="cProto" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<UsingSymbols>
+<SymbolReference symbolId="SYM20"/>
+<SymbolReference symbolId="SYM21"/>
+<SymbolReference symbolId="SYM7"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM11" type="variable" name="dUser" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<UsingSymbols>
+<SymbolReference symbolId="SYM17"/>
+<SymbolReference symbolId="SYM6"/>
+<SymbolReference symbolId="SYM18"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM12" type="variable" name="bitAlterneProto" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<UsingSymbols>
+<SymbolReference symbolId="SYM20"/>
+<SymbolReference symbolId="SYM21"/>
+<SymbolReference symbolId="SYM7"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM13" type="variable" name="bitAlterneDataUser" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+</Item>
+<Item id="ITEM14" type="variable" name="false" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+</Item>
+<Item id="ITEM15" type="variable" name="x" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<UsingSymbols>
+<SymbolReference symbolId="SYM9"/>
+<SymbolReference symbolId="SYM8"/>
+<SymbolReference symbolId="SYM13"/>
+<SymbolReference symbolId="SYM10"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM16" type="variable" name="bitAlterneDataProto" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+</Item>
+<Item id="ITEM17" type="variable" name="ANY" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<UsingSymbols>
+<SymbolReference symbolId="SYM9"/>
+<SymbolReference symbolId="SYM8"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM18" type="type" name="Indice" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="TRUE" syntypeBaseTypeId="ITEM8">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM2" positions="3,8"/>
+</DefiningSymbols>
+</Item>
+<Item id="ITEM19" type="variable" name="bitAlterneUser" parentId="ITEM1" scope="none" variableTypeName="Boolean" variableTypeId="ITEM5" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM2" positions="2,4"/>
+</DefiningSymbols>
+</Item>
+<Item id="ITEM2" type="variable" name="bitAlterneMsgProto" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+</Item>
+<Item id="ITEM20" type="variable" name="x" parentId="ITEM1" scope="none" variableTypeName="Integer" variableTypeId="ITEM8" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM2" positions="1,4"/>
+</DefiningSymbols>
+</Item>
+<Item id="ITEM21" type="variable" name="dUser" parentId="ITEM1" scope="none" variableTypeName="CharString" variableTypeId="ITEM7" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM2" positions="0,23"/>
+</DefiningSymbols>
+</Item>
+<Item id="ITEM22" type="variable" name="bitAlterneProto" parentId="ITEM1" scope="none" variableTypeName="Boolean" variableTypeId="ITEM5" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM2" positions="2,28"/>
+</DefiningSymbols>
+</Item>
+<Item id="ITEM23" type="variable" name="cProto" parentId="ITEM1" scope="none" variableTypeName="CharString" variableTypeId="ITEM7" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM2" positions="0,4"/>
+</DefiningSymbols>
+</Item>
+<Item id="ITEM24" type="state" name="Idle" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM5"/>
+</DefiningSymbols>
+<UsingSymbols>
+<SymbolReference symbolId="SYM22"/>
+<SymbolReference symbolId="SYM26"/>
+<SymbolReference symbolId="SYM19"/>
+<SymbolReference symbolId="SYM24"/>
+<SymbolReference symbolId="SYM4"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM3" type="variable" name="bitAlterneMsgUser" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+</Item>
+<Item id="ITEM4" type="variable" name="Indice" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<UsingSymbols>
+<SymbolReference symbolId="SYM9"/>
+<SymbolReference symbolId="SYM8"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM5" type="type" name="Boolean" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<UsingSymbols>
+<SymbolReference symbolId="SYM2"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM6" type="variable" name="true" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+</Item>
+<Item id="ITEM7" type="type" name="CharString" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<UsingSymbols>
+<SymbolReference symbolId="SYM2"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM8" type="type" name="Integer" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<UsingSymbols>
+<SymbolReference symbolId="SYM2"/>
+</UsingSymbols>
+<SourceFilePosition isDefine="FALSE" lineNumber="2" columnNumber="17"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="3" columnNumber="17"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="4" columnNumber="17"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="5" columnNumber="17"/>
+</Item>
+<Item id="ITEM9" type="variable" name="bitAlterneUser" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<UsingSymbols>
+<SymbolReference symbolId="SYM17"/>
+<SymbolReference symbolId="SYM6"/>
+<SymbolReference symbolId="SYM18"/>
+</UsingSymbols>
+</Item>
+</DictionaryObjects>
