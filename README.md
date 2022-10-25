@@ -1,4 +1,4 @@
-# Practical Work - Specification and Description Language
+# Project - Specification and Description Language
 
 <a href="https://www.pragmadev.com/">
   <img src="https://img.shields.io/badge/language-SDL-3dc1c6?style=flat-square" alt="laguage-SDL" />
