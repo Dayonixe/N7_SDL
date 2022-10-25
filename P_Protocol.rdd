@@ -5,37 +5,75 @@
 <SdlFSMDiagram language="sdl" type="prcs" is_extract="FALSE" is_temporary="FALSE">
 <SdlFSMPartition name="" needs_cleanup="FALSE">
 <SdlFSMSymbol identifier="SYM2" type="sdlText" text="DCL str CharString, msg CharString;
-DCl bitAlterne Boolean, bitAlterneEnAttente Boolean;" outline_color="-" background_color="-" center_coordinates="241 108" dimensions="384 50" attached_symbol_id=""/>
-<NonStateTransition top_left_coordinates="118 222">
-<SdlFSMSymbol identifier="SYM1" type="sdlStart" outline_color="-" background_color="-" center_coordinates="226 237" dimensions="60 30" attached_symbol_id=""/>
+DCl bitAlterne Boolean, bitAlterneEnAttente Boolean;
+DCL id Integer, lastId Integer;
+DCL retransmit Integer, lastRetransmit Integer;" outline_color="-" background_color="-" center_coordinates="446 124" dimensions="384 80" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM109" type="sdlComment" text="Cas normal" outline_color="-" background_color="-" center_coordinates="653 392" dimensions="90 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM99" type="sdlComment" text="Duplication
+du paquet" outline_color="-" background_color="-" center_coordinates="1165 615" dimensions="96 50" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM100" type="sdlComment" text="Paquet
+bizarre" outline_color="-" background_color="-" center_coordinates="1327 501" dimensions="68 50" attached_symbol_id=""/>
+<NonStateTransition top_left_coordinates="119 221">
+<SdlFSMSymbol identifier="SYM1" type="sdlStart" outline_color="-" background_color="-" center_coordinates="230 236" dimensions="60 30" attached_symbol_id=""/>
 <Transition>
-<SdlFSMSymbol identifier="SYM18" type="sdlTask" text="bitAlterneEnAttente := false" outline_color="-" background_color="-" center_coordinates="226 284" dimensions="216 40" attached_symbol_id=""/>
-<SdlFSMSymbol identifier="SYM6" type="sdlState" text="Build" outline_color="-" background_color="-" center_coordinates="226 336" dimensions="60 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM18" type="sdlTask" text="bitAlterneEnAttente := false,
+lastId := 10000,
+lastRetransmit := 0" outline_color="-" background_color="-" center_coordinates="230 295" dimensions="222 64" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM6" type="sdlState" text="Build" outline_color="-" background_color="-" center_coordinates="230 359" dimensions="60 40" attached_symbol_id=""/>
 </Transition>
 </NonStateTransition>
-<StateTransitionBlock top_left_coordinates="378 219">
-<SdlFSMSymbol identifier="SYM7" type="sdlState" text="Build" outline_color="-" background_color="-" center_coordinates="507 239" dimensions="60 40" attached_symbol_id=""/>
+<StateTransitionBlock top_left_coordinates="411 216">
+<SdlFSMSymbol identifier="SYM7" type="sdlState" text="Build" outline_color="-" background_color="-" center_coordinates="568 236" dimensions="60 40" attached_symbol_id=""/>
 <NormalStateTransition>
-<SdlFSMSymbol identifier="SYM8" type="sdlInputSig" text="dataProto(str, bitAlterne)" outline_color="-" background_color="-" center_coordinates="507 291" dimensions="202 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM8" type="sdlInputSig" text="dataProto(str, bitAlterne, id, retransmit)" outline_color="-" background_color="-" center_coordinates="568 288" dimensions="314 40" attached_symbol_id=""/>
 <Transition>
-<SdlFSMSymbol identifier="SYM15" type="sdlTask" text="bitAlterneEnAttente := bitAlterne" outline_color="-" background_color="-" center_coordinates="507 343" dimensions="250 40" attached_symbol_id=""/>
 <DecisionBlock>
-<SdlFSMSymbol identifier="SYM21" type="sdlDecision" text="bitAlterneEnAttente = bitAlterne" outline_color="-" background_color="-" center_coordinates="507 395" dimensions="244 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM86" type="sdlDecision" text="bitAlterneEnAttente = bitAlterne" outline_color="-" background_color="-" center_coordinates="568 340" dimensions="244 40" attached_symbol_id=""/>
 <DecisionBranch>
-<SdlFSMSymbol identifier="SYM22" type="sdlAnswer" text="true" outline_color="-" background_color="-" center_coordinates="507 447" dimensions="60 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM87" type="sdlAnswer" text="true" outline_color="-" background_color="-" center_coordinates="568 392" dimensions="60 40" attached_symbol_id="SYM109"/>
 <Transition>
-<SdlFSMSymbol identifier="SYM25" type="sdlTask" text="bitAlterneEnAttente := bitAlterne,
-msg := msg // str" outline_color="-" background_color="-" center_coordinates="507 504" dimensions="258 50" attached_symbol_id=""/>
-<SdlFSMSymbol identifier="SYM26" type="sdlSendSig" text="msgProto(msg, bitAlterne)" outline_color="-" background_color="-" center_coordinates="507 561" dimensions="194 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM89" type="sdlTask" text="msg := msg // str" outline_color="-" background_color="-" center_coordinates="568 444" dimensions="138 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM90" type="sdlSendSig" text="msgProto(msg, bitAlterne, id, retransmit)" outline_color="-" background_color="-" center_coordinates="568 496" dimensions="306 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM91" type="sdlTask" text="bitAlterneEnAttente := not bitAlterne,
+lastId := id" outline_color="-" background_color="-" center_coordinates="568 553" dimensions="286 50" attached_symbol_id=""/>
 </Transition>
 </DecisionBranch>
 <DecisionBranch>
-<SdlFSMSymbol identifier="SYM23" type="sdlAnswer" text="false" outline_color="-" background_color="-" center_coordinates="676 447" dimensions="60 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM88" type="sdlAnswer" text="false" outline_color="-" background_color="-" center_coordinates="884 392" dimensions="60 40" attached_symbol_id=""/>
+<Transition>
+<DecisionBlock>
+<SdlFSMSymbol identifier="SYM92" type="sdlDecision" text="id = lastId" outline_color="-" background_color="-" center_coordinates="884 444" dimensions="96 40" attached_symbol_id=""/>
+<DecisionBranch>
+<SdlFSMSymbol identifier="SYM93" type="sdlAnswer" text="true" outline_color="-" background_color="-" center_coordinates="884 496" dimensions="60 40" attached_symbol_id=""/>
+<Transition>
+<DecisionBlock>
+<SdlFSMSymbol identifier="SYM95" type="sdlDecision" text="retransmit &gt; 0 and
+not (retransmit = lastRetransmit)" outline_color="-" background_color="-" center_coordinates="884 553" dimensions="250 50" attached_symbol_id=""/>
+<DecisionBranch>
+<SdlFSMSymbol identifier="SYM96" type="sdlAnswer" text="true" outline_color="-" background_color="-" center_coordinates="884 610" dimensions="60 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM98" type="sdlSendSig" text="msgProto(msg, bitAlterne, id, retransmit)" outline_color="-" background_color="-" center_coordinates="884 662" dimensions="306 40" attached_symbol_id=""/>
+</Transition>
+</DecisionBranch>
+<DecisionBranch>
+<SdlFSMSymbol identifier="SYM97" type="sdlAnswer" text="false" outline_color="-" background_color="-" center_coordinates="1077 615" dimensions="60 50" attached_symbol_id="SYM99"/>
 <Transition>
 </Transition>
 </DecisionBranch>
 </DecisionBlock>
-<SdlFSMSymbol identifier="SYM17" type="sdlState" text="Build" outline_color="-" background_color="-" center_coordinates="507 625" dimensions="60 40" attached_symbol_id=""/>
+</Transition>
+</DecisionBranch>
+<DecisionBranch>
+<SdlFSMSymbol identifier="SYM94" type="sdlAnswer" text="false" outline_color="-" background_color="-" center_coordinates="1253 501" dimensions="60 50" attached_symbol_id="SYM100"/>
+<Transition>
+</Transition>
+</DecisionBranch>
+</DecisionBlock>
+</Transition>
+</DecisionBranch>
+</DecisionBlock>
+<SdlFSMSymbol identifier="SYM108" type="sdlTask" text="lastRetransmit := retransmit" outline_color="-" background_color="-" center_coordinates="568 750" dimensions="216 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM17" type="sdlState" text="Build" outline_color="-" background_color="-" center_coordinates="568 802" dimensions="60 40" attached_symbol_id=""/>
 </Transition>
 </NormalStateTransition>
 </StateTransitionBlock>

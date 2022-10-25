@@ -16,10 +16,12 @@
 <Text>Duplicator</Text>
 </Symbol>
 
-<Symbol symbolId="SYMB2" type="sdlText" xCenter="275" yCenter="66" fixedDimensions="FALSE" width="528" height="88" color="#000000" fillColor="#FFFFFF">
+<Symbol symbolId="SYMB2" type="sdlText" xCenter="264" yCenter="66" fixedDimensions="FALSE" width="440" height="110" color="#000000" fillColor="#FFFFFF">
 <Description></Description>
-<Text>SIGNAL dataUser(CharString, Boolean), msgUser(CharString, Boolean);
-SIGNAL dataProto(CharString, Boolean), msgProto(CharString, Boolean);
+<Text>SIGNAL dataUser(CharString, Boolean, Integer, Integer);
+SIGNAL msgUser(CharString, Boolean, Integer, Integer);
+SIGNAL dataProto(CharString, Boolean, Integer, Integer);
+SIGNAL msgProto(CharString, Boolean, Integer, Integer);
 SIGNAL String(CharString);
 </Text>
 </Symbol>
