@@ -6,57 +6,54 @@
 
 ---
 
-Pour ce TP, nous avons utilisé <a href="https://www.pragmadev.com/">PragmaStudio</a> pour l'utilisation du langage.
+For this project, we used <a href="https://www.pragmadev.com/">PragmaStudio</a> to use the language.
 
-Pour compiler le projet, dans l'arborescence, faire clic-droit sur le système et *Build*.
-
-Pour lancer une simulation, dans l'arborescence, faire clic-droit sur le système et *Debug*.
+- To build the project, in the tree, right-click on the system and *Build*.
+- To launch a simulation, in the tree structure, right-click on the system and *Debug*.
 
 ---
 
-Dans un premier temps notre objectif était simplement de gérer un protocole qui reçoit des données (ici une chaîne de caractères) de l’utilisateur, les insères dans les messages de donnée (ici une chaîne de caractères avec des données précédentes) et les délivres à l’arrivée.
-
-Transmission de paquet :
+Initially our objective was simply to manage a protocol that receives data (here a string) from the user, inserts it into data messages (here a string with previous data) and delivers it on arrival.
 
 <p align="center">
   <img src=/Documents/partie1.png alt="Partie 1" />
-</p>
+  <br><em>Packet transmission</em>
+</p><br>
 
 
-Dans la seconde partie nous devions insérer un élément perturbateur. Entre le protocole et l'utilisateur, on ajoute une couche qui peut dédoubler des paquets de manière aléatoire. Elle doit pouvoir dédoubler les messages de données comme les acquittements.
-
-Duplication de paquet :
+In the second part we had to insert a disruptive element. Between the protocol and the user, we add a layer that can split packets randomly. It must be able to split data messages as well as acknowledgements.
 
 <p align="center">
   <img src=/Documents/partie2.png alt="Partie 2" />
-</p>
+  <br><em>Packet duplication</em>
+</p><br>
 
 
-Par la suite nous complétons l'élément perturbateur qui a maintenant la possibilité de perdre des paquets.
+Subsequently we complete the disruptive element which now has the possibility of losing packets.
 
-Perte de paquet :
 <p align="center">
   <img src=/Documents/partie3.png alt="Partie 3" />
-</p>
+  <br><em>Packet loss</em>
+</p><br>
 
 
-Après avoir ajouter la possibilité d'avoir des paquets dédoublés et d'autres paquets perdus, il faut fiabiliser notre protocole pour traiter ces cas d'erreurs.
-Pour cela nous utilisons le principe du *bit alterné*, dit aussi *fenêtre glissante de taille 1*.
+After adding the possibility of duplicated packets and other lost packets, we need to make our protocol more reliable in order to deal with these error cases.
+To do this we use the *alternating bit* principle, also known as *sliding window of size 1*.
 
-Principe du bit alterné :
 <p align="center">
   <img src=/Documents/partie4-1.png alt="Partie 4-1" />
-</p>
+  <br><em>Alternating bit principle</em>
+</p><br>
 
-Gestion des pertes avec le timer :
 <p align="center">
   <img src=/Documents/partie4-2.png alt="Partie 4-2" />
-</p>
+  <br><em>Loss management with the timer</em>
+</p><br>
 
-Lancement et reset du timer :
 <p align="center">
   <img src=/Documents/partie4-3.png alt="Partie 4-3" />
-</p>
+  <br><em>Starting and resetting the timer</em>
+</p><br>
 
 > **Warning**<br>
-> Pour l'utilisation du timer dans la simulation, il faut aller l'activer via le menu *Options → Timer → Real time timers*
+> To use the timer in the simulation, you have to activate it via the menu *Options → Timer → Real time timers*.
