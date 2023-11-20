@@ -55,5 +55,5 @@ To do this we use the *alternating bit* principle, also known as *sliding window
   <br><em>Starting and resetting the timer</em>
 </p><br>
 
-> **Warning**<br>
+> [!WARNING]
 > To use the timer in the simulation, you have to activate it via the menu *Options → Timer → Real time timers*.
